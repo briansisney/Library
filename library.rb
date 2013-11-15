@@ -28,7 +28,7 @@ class Library
     if book.borrowed
       puts "this book is already checked out."
     else
-      book.reading(user)
+      book.borrowed_by(user)
     end
     
   end
@@ -40,7 +40,6 @@ end
 class Borrower
   def initialize(name)
     @name = name
-    puts "Borrower #{name} has been created"
   end
 
   def borrowed_books
@@ -65,7 +64,6 @@ class Book
     @title = title
     @author = author
     @borrowed = false
-    puts "Book #{title} has been created"
   end
     def title
     @title
@@ -77,7 +75,7 @@ class Book
   def borrowed
     @borrowed
   end
-  def reading(user)
+  def borrowed_by(user)
     @borrowed = user
   end
   
