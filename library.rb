@@ -14,11 +14,11 @@ class Library
   end
 
   def borrowed_books
-    @books.each { |book| puts book.title if book.status  }
+    @books.each { |book| puts "Title: #{book.title}, Checked Out by: #{book.borrower.name}" if book.status  }
   end
 
   def available_books
-   # list borrowed with false
+   @books.each { |book| puts "Titles available: #{book.title}" if !book.status  }
   end
 
   def add_book(book)

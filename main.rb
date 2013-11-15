@@ -82,6 +82,7 @@ puts "-------------------------"
 puts "this should only show the borrowed books with their borrowers"
 library.borrowed_books
 puts "-------------------------"
+library.available_books
 =begin
 puts "this should only show the available books"
 library.available_books
