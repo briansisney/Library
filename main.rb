@@ -19,8 +19,6 @@ finnegan = Book.new("Finnegans Wake", "James Joyce")
 k_and_r = Book.new("The C Programming Language", "Kernighan and Ritchie")
 puts "-------------------------"
 
-
-
 puts "add our books to the library"
 library.add_book(stranger)
 library.add_book(nausea)
@@ -29,7 +27,6 @@ library.add_book(feynman)
 library.add_book(finnegan)
 library.add_book(k_and_r)
 puts "-------------------------"
-
 
 puts "list all five books in the library's catalog with their status:"
 library.list_books
@@ -49,14 +46,9 @@ puts "list all five books in the library's catalog with their statuses:"
 library.list_books
 puts "-------------------------"
 
-
 puts "try to check out another book for Mike, this should fail since he already
   has two out"
 library.check_out(mike, finnegan)
-puts "-------------------------"
-
-puts "list all five books in the library's catalog with their statuses:"
-library.list_books
 puts "-------------------------"
 
 puts "this book should still be available since it failed before"
@@ -82,10 +74,9 @@ puts "-------------------------"
 puts "this should only show the borrowed books with their borrowers"
 library.borrowed_books
 puts "-------------------------"
-library.available_books
-=begin
+
 puts "this should only show the available books"
 library.available_books
 puts "-------------------------"
 
-=end
+

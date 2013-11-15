@@ -12,6 +12,7 @@ class Library
       puts "Title: #{book.title}, Author: #{book.author},  Checked Out: #{book.status ? "Available" : "Not Available"}, Checked Out By: #{book.borrower ? book.borrower.name : "Not Checked Out"}"
     end
   end
+end
 
   def borrowed_books
     @books.each { |book| puts "Title: #{book.title}, Checked Out by: #{book.borrower.name}" if book.status  }
