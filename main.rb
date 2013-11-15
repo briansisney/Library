@@ -55,6 +55,9 @@ puts "try to check out another book for Mike, this should fail since he already
 library.check_out(mike, finnegan)
 puts "-------------------------"
 
+puts "list all five books in the library's catalog with their statuses:"
+library.list_books
+puts "-------------------------"
 =begin
 puts "this book should still be available since it failed before"
 library.check_out(ricardo, finnegan)

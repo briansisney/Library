@@ -3,7 +3,8 @@ class Library
     @books = []
   end
 
-  def books 
+  def books
+    @books 
   end
 
   def list_books
@@ -25,15 +26,17 @@ class Library
   end
 
   def check_out(user, book) 
-    if borrowed_books_count > 1
-      return "#{user} already has two books checked out"
+    if user.borrowed_books_count > 1
+      puts "#{user.name} already has two books checked out"
+      return "#{user.name} already has two books checked out"
     end
 
     if book.status
-      return "this book is already checked out."
+      puts "this book is already checked out."
     else
       book.borrower=(user)
       book.status=true
+      user.add_borrowed_book(book)
     end
     
   end
@@ -45,11 +48,15 @@ end
 class Borrower
   def initialize(name)
     @name = name
+    @borrowed_books=[]
   end
 
   def borrowed_books
-    # list books with status of name
+    @borrowed_books
+  end
 
+  def add_borrowed_book (book)
+    @borrowed_books << book
   end
 
   def name
@@ -57,11 +64,11 @@ class Borrower
   end
 
   def borrowed_books_count
-    #count list
+    @borrowed_books.count
   end
 
   def borrowed_books_list
-
+    @borrowed_books.each { |book| puts "#{book.title}" }
   end
 end
 
@@ -72,7 +79,7 @@ class Book
     @borrower = nil
     @status = false
   end
-    def title
+  def title
     @title
   end
 
@@ -89,7 +96,7 @@ class Book
     @status
   end
     def status=(value)
-    @status=value
+    @status= value
   end
   
 end
