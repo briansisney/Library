@@ -14,7 +14,7 @@ class Library
   end
 
   def borrowed_books
-
+    @books.each { |book| puts book.title if book.status  }
   end
 
   def available_books

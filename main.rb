@@ -58,7 +58,7 @@ puts "-------------------------"
 puts "list all five books in the library's catalog with their statuses:"
 library.list_books
 puts "-------------------------"
-=begin
+
 puts "this book should still be available since it failed before"
 library.check_out(ricardo, finnegan)
 puts "-------------------------"
@@ -82,7 +82,7 @@ puts "-------------------------"
 puts "this should only show the borrowed books with their borrowers"
 library.borrowed_books
 puts "-------------------------"
-
+=begin
 puts "this should only show the available books"
 library.available_books
 puts "-------------------------"
