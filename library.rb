@@ -13,7 +13,9 @@ class Library
   end
 
   def borrowed_books
-   # list borrowed with  true
+  # @books.each do |book|
+  #   book.borrowed
+  # end
   end
 
   def available_books
@@ -64,6 +66,7 @@ class Book
     @title = title
     @author = author
     @borrowed = false
+    @status=false
   end
     def title
     @title
@@ -77,6 +80,10 @@ class Book
   end
   def borrowed_by(user)
     @borrowed = user
+    @status=true
+  end
+  def status
+    @status
   end
   
 end
