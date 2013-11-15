@@ -19,6 +19,8 @@ finnegan = Book.new("Finnegans Wake", "James Joyce")
 k_and_r = Book.new("The C Programming Language", "Kernighan and Ritchie")
 puts "-------------------------"
 
+
+
 puts "add our books to the library"
 library.add_book(stranger)
 library.add_book(nausea)
@@ -28,6 +30,7 @@ library.add_book(finnegan)
 library.add_book(k_and_r)
 puts "-------------------------"
 
+=begin
 puts "list all five books in the library's catalog with their status:"
 library.list_books
 puts "-------------------------"
@@ -79,4 +82,4 @@ puts "this should only show the available books"
 library.available_books
 puts "-------------------------"
 
-
+=end

@@ -35,7 +35,7 @@ end
 class Borrower
   def initialize(name)
     @name = name
-    
+    puts "Borrower #{name} has been created"
   end
 
   def borrowed_books
@@ -60,6 +60,7 @@ class Book
     @title = title
     @author = author
     @borrowed = false
+    puts "Book #{title} has been created"
   end
     def title
     @title
