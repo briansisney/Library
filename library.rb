@@ -9,7 +9,7 @@ class Library
 
   def list_books
     @books.each do |book|
-      puts "Title: #{book.title}, Author: #{book.author},  Checked Out: #{book.status}, Checked Out By: #{book.borrower ? book.borrower.name : "Available"}"
+      puts "Title: #{book.title}, Author: #{book.author},  Checked Out: #{book.status ? "Available" : "Not Available"}, Checked Out By: #{book.borrower ? book.borrower.name : "Not Checked Out"}"
     end
   end
 
@@ -18,7 +18,7 @@ class Library
   end
 
   def available_books
-   @books.each { |book| puts "Titles available: #{book.title}" if !book.status  }
+   @books.each { |book| puts "Titles available: #{book.title}" if !book.status}
   end
 
   def add_book(book)
@@ -33,6 +33,7 @@ class Library
 
     if book.status
       puts "this book is already checked out."
+      return "this book is already checked out."
     else
       book.borrower=(user)
       book.status=true
@@ -42,6 +43,13 @@ class Library
   end
 
   def check_in(book)
+    unless book.status
+      puts "You do not have this book checked out."
+      return "You do not have this book checked out."
+    else
+      book.borrower=(false)
+      book.status=false
+      user.release_borrowed_book(book)
   end
 end
 
@@ -57,6 +65,10 @@ class Borrower
 
   def add_borrowed_book (book)
     @borrowed_books << book
+  end
+
+  def release_borrowed_book(book)
+    @borrowed_books.delete_at(@borrowed_books.index(book))
   end
 
   def name
