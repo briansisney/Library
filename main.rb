@@ -30,7 +30,7 @@ library.add_book(finnegan)
 library.add_book(k_and_r)
 puts "-------------------------"
 
-=begin
+
 puts "list all five books in the library's catalog with their status:"
 library.list_books
 puts "-------------------------"
@@ -49,6 +49,7 @@ puts "list all five books in the library's catalog with their statuses:"
 library.list_books
 puts "-------------------------"
 
+=begin
 puts "try to check out another book for Mike, this should fail since he already
   has two out"
 library.check_out(mike, finnegan)

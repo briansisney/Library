@@ -8,7 +8,7 @@ class Library
 
   def list_books
     @books.each do |book|
-      puts "Title: #{book.title}, Author: #{book.author}, Status: #{book.borrowed ? book.borrowed.name : "Available"}"
+      puts "Title: #{book.title}, Author: #{book.author}, Checked Out By: #{book.borrowed ? book.borrowed.name : "Available"}"
     end
   end
 
@@ -22,6 +22,7 @@ class Library
 
   def add_book(book)
     @books << book 
+
   end
 
   def check_out(user, book) 
