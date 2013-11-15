@@ -7,6 +7,9 @@ class Library
   end
 
   def list_books
+    @books.each do |book|
+      puts "Title: #{book.title}, Author: #{book.author}"
+    end
   end
 
   def borrowed_books
@@ -48,5 +51,12 @@ class Book
   def initialize(title, author)
     @title = title
     @author = author
+  end
+    def title
+    @title
+  end
+
+  def author
+    @author
   end
 end
