@@ -3,7 +3,7 @@ class Library
     @books = []
   end
 
-  def books
+  def books  
   end
 
   def list_books
@@ -16,6 +16,7 @@ class Library
   end
 
   def add_book(book)
+    @books << book 
   end
 
   def check_out(user, book)
