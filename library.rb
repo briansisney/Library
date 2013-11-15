@@ -22,11 +22,15 @@ class Library
 
   def add_book(book)
     @books << book 
-
   end
 
   def check_out(user, book) 
-    book.reading(user)
+    if book.borrowed
+      puts "this book is already checked out."
+    else
+      book.reading(user)
+    end
+    
   end
 
   def check_in(book)

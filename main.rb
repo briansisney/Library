@@ -49,12 +49,13 @@ puts "list all five books in the library's catalog with their statuses:"
 library.list_books
 puts "-------------------------"
 
-=begin
+
 puts "try to check out another book for Mike, this should fail since he already
   has two out"
 library.check_out(mike, finnegan)
 puts "-------------------------"
 
+=begin
 puts "this book should still be available since it failed before"
 library.check_out(ricardo, finnegan)
 puts "-------------------------"
