@@ -38,6 +38,7 @@ class Borrower
   end
 
   def name
+    @name
   end
 
   def borrowed_books_count
