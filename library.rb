@@ -88,11 +88,11 @@ class Book
     @edition=edition
     @reviews={}
   end 
-  def add_review(user, rating, review)
+  def add_review(user, rating, review="no written review")
     @reviews[user]=[rating, review]
   end
-  def list_review
-    
+  def list_reviews
+    @reviews.each { |user, array| puts "#{user.name}: Rating: #{array[0]}, Optional review: #{array[1]}" }
   end
 
 end

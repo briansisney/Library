@@ -89,3 +89,8 @@ puts "-------------------------"
 puts "list all five books in the library's catalog with their statuses:"
 library.list_books
 puts "-------------------------"
+
+stranger.add_review(mike,5,"loved it")
+stranger.add_review(ricardo,4)
+
+stranger.list_reviews
