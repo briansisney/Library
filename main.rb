@@ -78,5 +78,14 @@ puts "-------------------------"
 puts "this should only show the available books"
 library.available_books
 puts "-------------------------"
-
-
+puts "list all five books in the library's catalog with their statuses:"
+library.list_books
+puts "-------------------------"
+mike.borrowed_books_list
+puts "checking in book"
+library.check_in(stranger)
+puts "-------------------------"
+puts "list all five books in the library's catalog with their statuses:"
+library.list_books
+puts "-------------------------"
+mike.borrowed_books_list
