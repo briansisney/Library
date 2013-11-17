@@ -1,18 +1,14 @@
 class Library
+
   def initialize
     @books = []
   end
 
-  def books
-    @books 
-  end
-
   def list_books
     @books.each do |book|
-      puts "Title: #{book.title}, Author: #{book.author},  Checked Out: #{book.status ? "Available" : "Not Available"}, Checked Out By: #{book.borrower ? book.borrower.name : "Not Checked Out"}"
+      puts "Title: #{book.title}, Author: #{book.author},  Checked Out: #{book.status ? "Available" : "Not Available"}, Checked Out By: #{book.borrower ? book.borrower.name : "Not Checked Out"} Published: #{book.year_published}, Edition: #{book.edition}"
     end
   end
-
 
   def borrowed_books
     @books.each { |book| puts "Title: #{book.title}, Checked Out by: #{book.borrower.name}" if book.status  }
@@ -57,13 +53,11 @@ class Library
 end
 
 class Borrower
+  attr_accessor :name
+
   def initialize(name)
     @name = name
     @borrowed_books=[]
-  end
-
-  def borrowed_books
-    @borrowed_books
   end
 
   def add_borrowed_book (book)
@@ -72,10 +66,6 @@ class Borrower
 
   def release_borrowed_book(book)
     @borrowed_books.delete_at(@borrowed_books.index(book))
-  end
-
-  def name
-    @name
   end
 
   def borrowed_books_count
@@ -88,30 +78,21 @@ class Borrower
 end
 
 class Book
-  def initialize(title, author)
+  attr_accessor :author, :title, :borrower, :status, :year_published, :edition
+  def initialize(title, author, year_published=2013, edition=1)
     @title = title
     @author = author
     @borrower = nil
     @status = false
+    @year_published=year_published
+    @edition=edition
+    @reviews={}
+  end 
+  def add_review(user, rating, review)
+    @reviews[user]=[rating, review]
   end
-  def title
-    @title
+  def list_review
+    
   end
 
-  def author
-    @author
-  end
-  def borrower
-    @borrower
-  end
-  def borrower=(user)
-    @borrower= user
-  end
-  def status
-    @status
-  end
-  def status=(value)
-    @status= value
-  end
-  
 end
