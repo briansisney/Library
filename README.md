@@ -1,5 +1,4 @@
 Library Project!
 =======
 
-Michael Ornellas
-Instructor @ [MakerSquare](http://themakersquare.com)
+First week project to learn ruby language. 
